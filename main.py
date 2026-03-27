@@ -61,6 +61,6 @@ def main():
             print("Invalid choice. Please try again.")
 
 # run the program only with the command "python main.py" and avoid running when main() is imported in different file
-if __name__ == "__main__": # __name__ is a special variable for each file; __main__ is a special value/name for main file from
-                            # which the program runs (it also can be file called "program.py" not only "main.py")
+if __name__ == "__main__": # __main__ is a special value/name for main file from
+                        # which the program runs (it also can be file called "program.py" not only "main.py")
     main()
