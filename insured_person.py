@@ -33,7 +33,8 @@ class InsuredPerson:
         self._age = valid_age
         self._phone_number = valid_phone_number
 
-    # creating methods via property which enable using the protected attribute in insurance_manager; for finding insured person based on name and surname
+    # creating methods via property which enable using the protected attribute in insurance_manager;
+    # for finding insured person based on name and surname
     @property
     def first_name(self):
         return self._first_name
