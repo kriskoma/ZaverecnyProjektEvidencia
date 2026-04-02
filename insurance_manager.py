@@ -8,11 +8,12 @@ class InsuranceManager:
 
     # finding insured person based on first and last name
     def find_insured_person(self, first_name, last_name):
+        list_of_insured_people = []
         for insured_person in self._insured_people:
             if (insured_person.first_name.lower() == first_name.lower() and
                 insured_person.last_name.lower() == last_name.lower()):
-                return insured_person
-        return None  # if not found
+                list_of_insured_people.append(insured_person)
+        return list_of_insured_people  # if not found
 
     # display of all insured people
     def get_insured_people(self):

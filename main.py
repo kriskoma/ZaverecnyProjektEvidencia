@@ -3,8 +3,9 @@ from insurance_manager import InsuranceManager
 
 def main():
     manager = InsuranceManager()
+    choice = ""
 
-    while True:
+    while choice != "4":
         print("\n--- Insurance Registry ---")
         print("1. Add insured person")
         print("2. Show all insured people")
@@ -25,7 +26,7 @@ def main():
             try:
                 person = InsuredPerson(first_name, last_name, age, phone_number)
                 manager.add_insured_person(person)
-                print("Insured person added successfully. Press any key to continue...")
+                input("Insured person added successfully. Press any key to continue...")
             except ValueError as e:
                 print(f"Error: {e}")
 
@@ -38,7 +39,7 @@ def main():
                 print("\n--- List of insured people ---")
                 for person in people:
                     print(person)
-            print("\nPress any key to continue")
+            input("\nPress any key to continue")
 
         elif choice == "3":
             # find insured person based on first and last name
@@ -47,18 +48,18 @@ def main():
 
             found = manager.find_insured_person(first_name, last_name)
             if found:
-                print("\nPerson found:")
-                print(found) # the found object is automatically displayed via set __str__
+                for person in found:
+                    print(f"Person found: {person}\n")
             else:
                 print("No matching person found.")
-            print("\nPress any key to continue")
+            input("\nPress any key to continue")
 
         elif choice == "4":
             print("Exiting program.")
             break
 
         else:
-            print("Invalid choice. Please try again.")
+            input("Invalid choice. Please try again.")
 
 # run the program only with the command "python main.py" and avoid running when main() is imported in different file
 if __name__ == "__main__": # __main__ is a special value/name for main file from
